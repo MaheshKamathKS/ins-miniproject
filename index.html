@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome - Encryption App</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+          url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: #E0E0E0;
+        font-family: 'Arial', sans-serif;
+        text-align: center;
+      }
+      
+      .container {
+        background-color: rgba(20, 20, 20, 0.85);
+        padding: 40px;
+        border-radius: 12px;
+        width: 90%;
+        max-width: 500px;
+        text-align: center;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+      }
+      
+      h1 {
+        font-size: 28px;
+        margin-bottom: 30px;
+        color: #00d1ff;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+      }
+      
+      .section-label {
+        font-size: 20px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: #00d1ff;
+        border-bottom: 2px solid #00d1ff;
+        display: inline-block;
+        padding-bottom: 4px;
+      }
+      .button-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+      }
+      
+      .button-section a {
+        flex: 1; /* Allows equal distribution of space */
+        min-width: 45%; /* Ensures two buttons fit in a row */
+      }
+      
+      .button-section a button {
+        width: 100%;
+        background-color: #0088cc;
+        color: white;
+        padding: 14px;
+        border: none;
+        border-radius: 8px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 4px 10px rgba(0, 136, 204, 0.5);
+      }
+      
+      .button-section a button:hover {
+        background-color: #006699;
+        box-shadow: 0 6px 15px rgba(0, 102, 153, 0.6);
+        transform: translateY(-2px);
+      }
+      footer {
+        background-color: rgba(0, 0, 0, 0.85);
+        color: #fff;
+        text-align: center;
+        padding: 15px;
+        font-size: 16px;
+        border-top: 2px solid #00d1ff;
+        box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+    
+      
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to the Encryption-Decryption Tool</h1>
+
+    <div class="section-label">Simple Encryption</div>
+    <div class="button-section">
+      <a href="encryptmono.html"><button>Encrypt</button></a>
+      <a href="decryptmono.html"><button>Decrypt</button></a>
+    </div>
+
+    <div class="section-label">Advanced Encryption</div>
+    <div class="button-section">
+      <a href="encrypt.html"><button>Encrypt</button></a>
+      <a href="decrypt.html"><button>Decrypt</button></a>
+    </div>
+  </div>
+  <footer>
+    <p> This website is a mini-project for <strong>Information and Network Security</strong>.</p>
+    <p> Developed by <strong>Mahesh Kamath K S</strong> | USN: <strong>NNM22IS086</strong></p>
+</footer>
+
+</body>
+</html>

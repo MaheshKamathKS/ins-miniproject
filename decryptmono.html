@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Monoalphabetic Decryption</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: white;
+            color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+
+        }
+        .container {
+            background:white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 400px;
+            
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            background: #e67e22;
+            color: white;
+            border: none;
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #d35400;
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #ffb074;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 style="color: black;">simple Decryption</h2>
+        <input type="text" id="keyword" placeholder="Enter keyword">
+        <textarea id="ciphertext" rows="4" placeholder="Enter encrypted text..."></textarea>
+        <button onclick="decrypt()">Decrypt</button>
+        <textarea id="plaintext" rows="4" placeholder="Decrypted text will appear here..." readonly></textarea>
+        <a href="encryptmono.html" style="text-decoration: none;">Go to Encryption</a>
+    </div>
+
+    <script>
+        function generateKey(keyword) {
+            keyword = keyword.toUpperCase().replace(/[^A-Z]/g, '');
+            const seen = new Set();
+            let result = '';
+
+            for (let ch of keyword) {
+                if (!seen.has(ch)) {
+                    result += ch;
+                    seen.add(ch);
+                }
+            }
+
+            const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            for (let ch of alphabet) {
+                if (!seen.has(ch)) {
+                    result += ch;
+                }
+            }
+
+            return result;
+        }
+
+        function decrypt() {
+            const keyword = document.getElementById('keyword').value;
+            const text = document.getElementById('ciphertext').value.toUpperCase();
+            const key = generateKey(keyword);
+            const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            const reverseMap = {};
+
+            for (let i = 0; i < 26; i++) {
+                reverseMap[key[i]] = alphabet[i];
+            }
+
+            const result = text.split('').map(ch => reverseMap[ch] || ch).join('');
+            document.getElementById('plaintext').value = result;
+        }
+    </script>
+</body>
+</html>
